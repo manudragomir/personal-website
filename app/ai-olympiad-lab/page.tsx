@@ -19,7 +19,7 @@ const experienceTitle = "Experiență și rezultate";
 
 type StudentLink = { href?: string; label: string; results?: string[] };
 
-function isGroupedPoint(point: OverviewPoint): point is { text: string; items: StudentLink[] } {
+function isGroupedPoint(point: OverviewPoint): point is { text?: string; items: StudentLink[] } {
   return typeof point === "object";
 }
 
@@ -28,7 +28,7 @@ function ExperienceDetailCard({
   points
 }: {
   text?: string;
-  points: { text: string; items: StudentLink[] }[];
+  points: { text?: string; items: StudentLink[] }[];
 }) {
   const students = points[0]?.items ?? [];
 
@@ -155,35 +155,8 @@ export default function AiOlympiadPage() {
               <ul
                 className={`list-outside list-disc space-y-2 pl-5 text-sm text-muted ${item.text ? "mt-4" : ""}`}
               >
-                {item.points.map((point, index) => (
-                  <li key={typeof point === "string" ? point : index}>
-                    {typeof point === "string" ? (
-                      point
-                    ) : (
-                      <>
-                        {point.text}
-                        <ul className="mt-2 list-none space-y-1 pl-5">
-                          {point.items.map((student) => (
-                            <li key={student.label} className="flex gap-2">
-                              <span className="text-muted">-</span>
-                              {student.href ? (
-                                <a
-                                  href={student.href}
-                                  target="_blank"
-                                  rel="noreferrer noopener"
-                                  className="text-accent underline-offset-2 hover:underline"
-                                >
-                                  {student.label}
-                                </a>
-                              ) : (
-                                student.label
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                  </li>
+                {item.points.filter((point): point is string => typeof point === "string").map((point) => (
+                  <li key={point}>{point}</li>
                 ))}
               </ul>
             ) : null}

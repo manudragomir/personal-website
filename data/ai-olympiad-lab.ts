@@ -13,7 +13,7 @@ export type StudentItem = {
   results?: string[];
 };
 
-export type OverviewPoint = string | { text: string; items: StudentItem[] };
+export type OverviewPoint = string | { text?: string; items: StudentItem[] };
 
 export const hero = {
   title: "AI Olympiad Lab",
@@ -71,7 +71,6 @@ export const overviewSections: {
     text: "Am pregătit elevi pentru Olimpiada de Inteligență Artificială în cadrul Centrului Județean de Excelență Cluj. Au participat la etapele naționale din 2025 și 2026 și la etape internaționale în 2026, unde au obținut mai multe medalii.",
     points: [
       {
-        text: "Elevi din acel program au participat la etapele naționale din 2025 și 2026 și au obținut mai multe medalii",
         items: [
           {
             href: danielBenceMukLinkedInUrl,
@@ -97,7 +96,7 @@ export const overviewSections: {
             label: "Pop Matei",
             results: [
               "ONIA 2025 — participare",
-              "ONIA 2026 — bronz +lot național",
+              "ONIA 2026 — bronz + lot național",
               "ROAI 2026 — aur",
               "IOAI 2026 — bronz"
             ]
