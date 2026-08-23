@@ -6,7 +6,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Manu Dragomir",
-  description: "Personal portfolio and AI lessons."
+  description: "Personal portfolio."
 };
 
 type RootLayoutProps = {

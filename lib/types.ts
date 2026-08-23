@@ -40,16 +40,3 @@ export type BookInfo = {
   pdfUrl: string;
   buyMeACoffeeUrl: string;
 };
-
-export type NotebookLink = {
-  title: string;
-  url: string;
-};
-
-export type Lesson = {
-  title: string;
-  youtubeUrl: string;
-  description?: string;
-  coursePdfUrl?: string | null;
-  notebooks?: NotebookLink[];
-};
