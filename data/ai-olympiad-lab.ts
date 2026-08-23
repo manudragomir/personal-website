@@ -4,10 +4,16 @@ export const mateiPopLinkedInUrl = "https://www.linkedin.com/in/matei-pop-a30960
 export const iulianNistorLinkedInUrl = "https://www.linkedin.com/in/nistor-iulian-a81190370/";
 export const danielBenceMukLinkedInUrl = "https://www.linkedin.com/in/daniel-bence-muk-922b452b9/";
 export const emiliaSerbanLinkedInUrl = "https://www.linkedin.com/in/emilia-serban-634387350/";
+export const razvanStanLinkedInUrl = "https://www.linkedin.com/in/razvan-andrei-stan-733689402/";
+export const ianStefanCazacuLinkedInUrl = "https://www.linkedin.com/in/ian-stefan-cazacu-9b20aa366/";
 
-export type OverviewPoint =
-  | string
-  | { text: string; items: { href?: string; label: string }[] };
+export type StudentItem = {
+  href?: string;
+  label: string;
+  results?: string[];
+};
+
+export type OverviewPoint = string | { text: string; items: StudentItem[] };
 
 export const hero = {
   title: "AI Olympiad Lab",
@@ -61,22 +67,56 @@ export const overviewSections: {
     ]
   },
   {
-    title: "De ce să alegi AI Olympiad Lab?",
-    text: "În anul școlar 2024-2025, am pregătit elevi în cadrul Centrului Județean de Excelență Cluj pentru Olimpiada de Inteligență Artificială.",
+    title: "Experiență și rezultate",
+    text: "Am pregătit elevi pentru Olimpiada de Inteligență Artificială în cadrul Centrului Județean de Excelență Cluj. Au participat la etapele naționale din 2025 și 2026 și la etape internaționale în 2026, unde au obținut mai multe medalii.",
     points: [
       {
-        text: "Elevii din acel program au participat la etapa națională și au obținut mai multe medalii",
+        text: "Elevi din acel program au participat la etapele naționale din 2025 și 2026 și au obținut mai multe medalii",
         items: [
-          { href: emiliaSerbanLinkedInUrl, label: "Serban Emilia" },
-          { label: "Stan Razvan" }
-        ]
-      },
-      {
-        text: "Trei elevi din acea generație s-au calificat în 2026 la etapa internațională din Kazahstan și au obținut medalii",
-        items: [
-          { href: danielBenceMukLinkedInUrl, label: "Bence-Muk Daniel" },
-          { href: iulianNistorLinkedInUrl, label: "Nistor Iulian" },
-          { href: mateiPopLinkedInUrl, label: "Pop Matei" },
+          {
+            href: danielBenceMukLinkedInUrl,
+            label: "Bence-Muk Daniel",
+            results: [
+              "ONIA 2026 — argint + lot național",
+              "IOAI 2026 — bronz"
+            ]
+          },
+          {
+            href: iulianNistorLinkedInUrl,
+            label: "Nistor Iulian",
+            results: [
+              "ONIA 2025 — bronz",
+              "ONIA 2026 — bronz + lot național",
+              "ROAI 2026 — bronz",
+              "CEOAI 2026 — argint",
+              "IOAI 2026 — bronz"
+            ]
+          },
+          {
+            href: mateiPopLinkedInUrl,
+            label: "Pop Matei",
+            results: [
+              "ONIA 2025 — participare",
+              "ONIA 2026 — bronz +lot național",
+              "ROAI 2026 — aur",
+              "IOAI 2026 — bronz"
+            ]
+          },
+          {
+            href: razvanStanLinkedInUrl,
+            label: "Stan Razvan",
+            results: ["ONIA 2026 — participare"]
+          },
+          {
+            href: emiliaSerbanLinkedInUrl,
+            label: "Șerban Emilia",
+            results: ["ONIA 2026 — bronz"]
+          },
+          {
+            href: ianStefanCazacuLinkedInUrl,
+            label: "Ștefan-Cazacu Ian",
+            results: ["ONIA 2025 — bronz", "ONIA 2026 — participare", "ROAI 2026 — bronz"]
+          }
         ]
       }
     ]
@@ -172,7 +212,7 @@ export const outcomes = {
 
 export const howToApply = {
   steps: [
-    "Completează formularul de aplicație (butonul Aplică de pe pagină).",
+    "Completează formularul de înscriere (butonul Aplică de pe pagină).",
     "Termen limită: 20 septembrie 2026.",
     "Te voi contacta pe email cu pașii următori.",
     "Prima lecție este gratuită — o poți folosi ca să vezi dacă ți se potrivește programul."

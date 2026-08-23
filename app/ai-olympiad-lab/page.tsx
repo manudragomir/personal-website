@@ -11,8 +11,68 @@ import {
   overviewSections,
   outcomes,
   scholarships,
-  topics
+  topics,
+  type OverviewPoint
 } from "@/data/ai-olympiad-lab";
+
+const experienceTitle = "Experiență și rezultate";
+
+type StudentLink = { href?: string; label: string; results?: string[] };
+
+function isGroupedPoint(point: OverviewPoint): point is { text: string; items: StudentLink[] } {
+  return typeof point === "object";
+}
+
+function ExperienceDetailCard({
+  text,
+  points
+}: {
+  text?: string;
+  points: { text: string; items: StudentLink[] }[];
+}) {
+  const students = points[0]?.items ?? [];
+
+  return (
+    <div className="space-y-4">
+      {text ? <p className="text-sm text-muted">{text}</p> : null}
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-3">
+        {students.map((student) => (
+          <article key={student.label} className="rounded-xl border border-white/10 bg-card p-3">
+            {student.href ? (
+              <a
+                href={student.href}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="text-sm font-medium text-accent underline-offset-2 hover:underline"
+              >
+                {student.label}
+              </a>
+            ) : (
+              <p className="text-sm font-medium text-foreground">{student.label}</p>
+            )}
+            {student.results && student.results.length > 0 ? (
+              <ul className="mt-2 list-disc space-y-0.5 pl-4 text-xs text-muted">
+                {student.results.map((result) => (
+                  <li key={result}>{result}</li>
+                ))}
+              </ul>
+            ) : null}
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ExperienceResults({
+  text,
+  points
+}: {
+  text?: string;
+  points: OverviewPoint[] | undefined;
+}) {
+  return <ExperienceDetailCard text={text} points={(points ?? []).filter(isGroupedPoint)} />;
+}
 
 export const metadata: Metadata = {
   title: "AI Olympiad Lab",
@@ -57,6 +117,9 @@ export default function AiOlympiadPage() {
 
       {overviewSections.map((item) => (
         <Section key={item.title} title={item.title}>
+          {item.title === experienceTitle ? (
+            <ExperienceResults text={item.text} points={item.points} />
+          ) : (
           <article className="rounded-xl border border-white/10 bg-card p-5">
             {item.text || item.link ? (
               item.linkBelow ? (
@@ -126,6 +189,7 @@ export default function AiOlympiadPage() {
             ) : null}
             {item.note ? <p className="mt-4 text-sm italic text-muted">{item.note}</p> : null}
           </article>
+          )}
         </Section>
       ))}
 
