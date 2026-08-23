@@ -301,7 +301,7 @@ export default function AiOlympiadPage() {
         </details>
       </Section>
 
-      <Section id="aplicare" title="Cum aplic?">
+      <Section id="aplicare" title="Cum aplici?">
         <article className="rounded-xl border border-white/10 bg-card p-5">
           <ol className="list-inside list-decimal space-y-2 text-sm text-muted">
             {howToApply.steps.map((step) => (
