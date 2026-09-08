@@ -97,7 +97,7 @@ function ApplyButton({ className = "" }: { className?: string }) {
         rel="noreferrer noopener"
         className={`inline-block rounded-md bg-accent px-3 py-1.5 text-sm font-medium text-black transition hover:opacity-90 ${className}`}
       >
-        Aplică
+        Înscrie-te la prima lecție gratuită
       </a>
     </div>
   );

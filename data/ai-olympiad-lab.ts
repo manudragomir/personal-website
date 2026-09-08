@@ -211,7 +211,7 @@ export const outcomes = {
 
 export const howToApply = {
   steps: [
-    "Completează formularul de înscriere (butonul Aplică de pe pagină).",
+    "Completează formularul de înscriere de pe pagină.",
     "Termen limită: 20 septembrie 2026.",
     "Te voi contacta pe email cu pașii următori.",
     "Prima lecție este gratuită — o poți folosi ca să vezi dacă ți se potrivește programul."
