@@ -231,6 +231,12 @@ export const faq: {
       "Nu este necesară experiență anterioară în AI sau ML. Este util să ai deja ceva familiaritate cu programarea în orice limbaj (C/C++ etc.)."
   },
   {
+    question:
+      "Am trecut prin introducerea în AI, știu să scriu o regresie sau o clasificare și aș vrea ceva mai avansat. Este acest program pentru mine?",
+    answer:
+      "În forma actuală, programul se adresează începătorilor. Dacă ești deja la un nivel intermediar sau avansat, înscrie-te și completează câmpul de nivel — vom încerca să formăm o grupă separată."
+  },
+  {
     question: "Pot participa dacă nu am mai făcut Python?",
     answer:
       "Da. Primele săptămâni sunt rezervate pentru a învăța Python, gândite special pentru elevii care nu l-au folosit înainte. Ajută să ai deja noțiuni de bază de programare în orice limbaj pentru a înțelege mai ușor conceptele."
