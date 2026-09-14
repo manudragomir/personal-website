@@ -256,6 +256,12 @@ export const faq: {
     answer: "Da, elevii trebuie să aducă un laptop la întâlnirile săptămânale."
   },
   {
+    question: "Pot participa dacă nu sunt din Cluj și vreau să fac online?",
+    answer:
+      "Completează formularul și trimite-mi un mesaj pe email, cu mențiunea că vrei să participi online, la adresa",
+    link: { href: `mailto:${contactEmail}`, label: contactEmail }
+  },
+  {
     question: "Cum aplic pentru Bursa Socială?",
     answer:
       "Aplicația se face tot prin formularul de pe pagină. Documentele justificative vor fi cerute ulterior, atunci când va fi comunicată și grila de evaluare."
